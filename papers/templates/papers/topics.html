@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'papers/base.html' %}
+{% block content %}
+Topics:
+
+
+
+{% for topic in topics %}
+
+
+{% empty %}
+No,topics have been added yet.
+
+{% endfor %}
+<a href="new_topic" style="color: green;">Add a new topic:</a><br/>
+
+{% endblock content %}
+</body>
+</html>

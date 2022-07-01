@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+<center>
+<!-- href属性如果不加协议的话，默认是file://协议 -->
+<a href="/" style="color: orange;">主页</a><br>
+<a href="http://127.0.0.1:8000/admin" style="color: blue; ">管理入口</a><br/>
+<a href="http://www.cnki.net" style="color: green;">中国知网</a><br/>
+<a href="/papermanagermentsys" style="color: yellow;">Paper</a><br/>
+<a href="/topics" style="color: red;">Topics</a><br/>
+{% if user.is_authenticated %}
+Hello,{{ user.username }}
+<a href="{% url 'users:logout'%}" style="color: pink;">log out</a><br/>
+{% else %}
+<a href="/users/register" style="color: pink;">register</a><br/>
+<a href="/users/login" style="color: pink;">log in</a><br/>
+{% endif %}
+</center>
+{% block content %}{% endblock content %}
+
+
+</body>
+</html>
